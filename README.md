@@ -23,6 +23,7 @@ A C++ application for scheduling and managing exams, with features like conflict
 **Compile and Run**
 
 g++ -std=c++11 -o exam_time_management_system exam_time_management_system.cpp
+
 ./exam_time_management_system
 
 **Usage**
