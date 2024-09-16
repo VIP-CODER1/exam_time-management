@@ -1,4 +1,5 @@
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
+#include <fstream>
 using namespace std;
 
 string getCurrentTime() {
@@ -70,7 +71,6 @@ private:
     }
 
     pair<string, string> getNewTimeSlot() {
-       
         string newStartTime = "14:00"; 
         return {newStartTime, "16:00"}; 
     }
@@ -147,6 +147,31 @@ public:
             }
         }
     }
+
+    void loadExamsFromCSV(const string& fileName) {
+        ifstream file(fileName);
+        if (!file.is_open()) {
+            cout << "Error opening file " << fileName << "\n";
+            return;
+        }
+
+        string line;
+        while (getline(file, line)) {
+            stringstream ss(line);
+            string subject, date, startTime, durationStr;
+            int duration;
+
+            getline(ss, subject, ',');
+            getline(ss, date, ',');
+            getline(ss, startTime, ',');
+            getline(ss, durationStr, ',');
+
+            duration = stoi(durationStr);
+            scheduleExam(subject, date, startTime, duration);
+        }
+        file.close();
+        cout << "Exams loaded successfully from " << fileName << "\n";
+    }
 };
 
 // Main function
@@ -154,16 +179,16 @@ int main() {
     ExamTimeManagementSystem examSystem;
     int choice;
 
-    do { cout<<"\n*-----------------------------*";
+    do {
         cout << "\nAdvanced Exam Time Management System\n";
         cout << "1. Schedule Exam\n";
         cout << "2. View All Exams\n";
         cout << "3. Update Exam Status\n";
-        cout << "4. Reporting Time\n";
+        cout << "4. Set Reminder\n";
         cout << "5. Generate Performance Report\n";
         cout << "6. View Exam History\n";
-        cout << "7. Exit\n";
-        
+        cout << "7. Load Exams from CSV\n";  // New menu option
+        cout << "8. Exit\n";  // Updated exit option
         cout << "Enter your choice: ";
         
         cin >> choice;
@@ -211,13 +236,20 @@ int main() {
         case 6:
             examSystem.displayExamHistory();
             break;
-        case 7:
+        case 7: {
+            string fileName;
+            cout << "Enter CSV file name: ";
+            cin >> fileName;
+            examSystem.loadExamsFromCSV(fileName);
+            break;
+        }
+        case 8:
             cout << "Exiting...\n";
             break;
         default:
             cout << "Invalid choice! Please try again.\n";
         }
-    } while (choice != 7);
+    } while (choice != 8);
 
     return 0;
 }
