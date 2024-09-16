@@ -55,7 +55,7 @@ public:
 class ExamTimeManagementSystem {
 private:
     vector<Exam> exams;
-    map<string, vector<string>> examHistory; // Stores exam results history
+    map<string, vector<string>> examHistory; 
 
     void autoResolveConflicts(Exam& newExam) {
         for (auto& exam : exams) {
@@ -114,7 +114,7 @@ public:
             if (exam.subject == subject) {
                 cout << "Reminder set for " << subject << " " << minutesBefore << " minutes before the exam.\n";
                 // Simulating a reminder (In real application, use threading or scheduling library)
-                this_thread::sleep_for(chrono::seconds(5)); // Just a simulation of a reminder after 5 seconds
+                this_thread::sleep_for(chrono::seconds(5)); 
                 cout << "Reminder: Your exam for " << subject << " is scheduled soon!\n";
                 return;
             }
@@ -184,11 +184,11 @@ int main() {
         cout << "1. Schedule Exam\n";
         cout << "2. View All Exams\n";
         cout << "3. Update Exam Status\n";
-        cout << "4. Set Reminder\n";
+        cout << "4. Reporting Time\n";
         cout << "5. Generate Performance Report\n";
         cout << "6. View Exam History\n";
         cout << "7. Load Exams from CSV\n";  // New menu option
-        cout << "8. Exit\n";  // Updated exit option
+        cout << "8. Exit\n";  
         cout << "Enter your choice: ";
         
         cin >> choice;
