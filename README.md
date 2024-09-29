@@ -23,6 +23,7 @@ A C++ application for scheduling and managing exams, with features like conflict
 **Compile and Run**
 
 g++ filename.cpp
+
 ./a.out
 
 **Usage**
