@@ -1,50 +1,83 @@
 
 **Advanced Exam Time Management System**
 
-**Overview**
 
-A C++ application for scheduling and managing exams, with features like conflict detection, reminders, performance reports, and exam history tracking.
-
-**Features**
-
-**Schedule Exams:** Add exams with a date, start time, and duration.
-
-**Conflict Resolution:** Automatically detects and reschedules overlapping exams.
-
-**Status Updates:** Update the status of exams (e.g., Completed, Missed).
-
-**Reminders:** Set reminders a specific time before exams.
-
-**Performance Reports:** View a summary of all exams and their statuses.
-
-**Exam History:** Track changes in exam status over time.
+**Introduction**
 
 
-**Compile and Run**
+This document provides an outline of the Exam Timetable Management
+System, detailing its key features, objectives, and functionalities. The sys-
+tem is designed to manage the scheduling of exams, seating arrangements,
+invigilator duties, and related tasks for educational institutions. Below is an
+organized structure of the project:
+**1. Introduction**
 
-g++ filename.cpp
+• Overview of the Exam Timetable Management System.
+• Objectives and importance of managing exams efficiently.
+• Key features and scope of the system.
+**2. System Requirements**
 
-./a.out
 
-**Usage**
+• Hardware and software requirements for running the system.
+• Dependencies, such as CSV files for input and PDF generation
+tools.
+• Installation and setup instructions.
+**3. System Features and Functionalities**
 
-**Schedule Exam:** Enter subject, date, start time, and duration.
 
-**View Exams:** List all scheduled exams.
+**• Schedule Exam:**
 
-**Update Status:** Modify the status of an exam.
+– Input exam details (subject, semester, date, time, duration).
+– Save and update the exam schedule.
+**• Display All Exams:**
 
-**Reporting Time:** Notify a specified time before an exam.
+– View all scheduled exams with details.
+– Option to export to PDF for distribution.
+**• Update Exam Status:**
 
-**Generate Report:** View all exam statuses.
 
-**View History:** See the status change history.
+– Modify the status of any scheduled exam (e.g., completed, post-
+poned, cancelled).
+**• Generate Performance Report (Upcoming Feature):**
 
-**Future Improvements**
+– Future implementation to analyze student performance after
+exams.
+**• Load Exams from CSV:**
 
-Add file/database storage for exams.
+– Bulk import exam schedules from CSV files.
+• Load Room Seating from CSV:
+– Import seating arrangements from CSV for multiple rooms.
+**• Display Room Seating:**
 
-Implement real-time reminders.
 
-Enhance error handling and validation.
+– Display seating arrangements and export to PDF for printing.
+• Load Invigilator Duties from CSV:
+– Import invigilator duties from CSV files.
+**• Display Invigilator Duties:**
 
+– Display invigilator duty assignments and export to PDF.
+**• Regenerate Random Exam Schedule:**
+
+– Automatically shuffle and regenerate the exam schedule.
+**• Regenerate Random Invigilator Duty Schedule:**
+
+– Automatically regenerate invigilator duty assignments.
+**• Convert to PDF:**
+
+– Export exam schedules, room seating, and invigilator duties
+to PDF.
+**4. System Design**
+
+• Architectural overview of the system (modules and components).
+• Flow of data between system components (CSV files, random gen-
+erators, etc.).
+**5. Implementation Details**
+
+• Coding languages and libraries used (e.g., C++, CSV parsers, PDF
+generators).
+**• Algorithms for random exam scheduling and invigilator assign-
+ments.**
+**6. Testing and Validation**
+
+**• Description of test cases for each functionality.**
+**• Testing methodologies (unit testing, integration testing, etc.).**
